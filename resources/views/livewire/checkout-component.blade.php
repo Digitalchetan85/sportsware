@@ -151,8 +151,8 @@
 									{{-- <span class="payment-desc">But the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable</span> --}}
 								</label>
 								<label class="payment-method">
-									<input name="payment-method" id="payment-method-visa" value="visa" type="radio" wire:model="paymentMethod">
-									<span>visa</span>
+									<input name="payment-method" id="payment-method-visa" value="razorpay" type="radio" wire:model="paymentMethod">
+									<span>Razorpay</span>
 									{{-- <span class="payment-desc">There are many variations of passages of Lorem Ipsum available</span> --}}
 								</label>
 							</div>

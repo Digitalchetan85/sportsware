@@ -9,9 +9,16 @@ use App\Models\Transaction;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use Cart;
+use Illuminate\Support\Str;
+use Razorpay\Api\Api;
+
+// use Razorpay\Api\Api;
 
 class CheckoutComponent extends Component
 {
+    private $razorpayId = "rzp_test_kHhTGq6d0I9ltk";
+    private $razorpaykey = "9P4tuae2VemGZNrHsOlTs4Ex";
+
     public $ship_to_different;
 
     public $fname;
@@ -151,19 +158,64 @@ class CheckoutComponent extends Component
 
         if($this->paymentMethod == 'cod')
         {
-        $transaction = new Transaction();
-        $transaction->user_id = Auth::user()->id;
-        $transaction->order_id = $order->id;
-        $transaction->mode='cod';
-        $transaction->status='pending';
-        $transaction->save();
+            $transaction = new Transaction();
+            $transaction->user_id = Auth::user()->id;
+            $transaction->order_id = $order->id;
+            $transaction->mode='cod';
+            $transaction->status='pending';
+            $transaction->save();
+            $this->thankyou();
         }
+        elseif($this->paymentMethod == 'razorpay')
+        {
+            session()->put('transaction', [
+                'orderid' => $order->id,
+                'userid' => Auth::user()->id,
+            ]);
+
+            session()->put('order', $order);
+
+            $transaction = new Transaction();
+            $transaction->user_id = Auth::user()->id;
+            $transaction->order_id = $order->id;
+            $transaction->mode = $this->paymentMethod;
+            $transaction->status = 'pending';
+            $transaction->save();
+
+            $receiptId = Str::random(20);
+            $api = new Api($this->razorpayId, $this->razorpaykey);
+
+            //creating order
+            $order = $api->order->create(array(
+                'receipt' => $receiptId,
+                'amount' => session()->get('checkout')['total']*100,
+                'currency' => 'INR',
+            ));
+
+            session()->put('razorpay', [
+                'orderId' => $order['id'],
+                'razorpayId' => $this->razorpayId,
+                'amount' => session()->get('checkout')['total'] * 100,
+                'name' => $this->fname.' '.$this->lname,
+                'currency' => 'INR',
+                'email' => $this->email,
+                'contactNumber' => $this->phone,
+                'address' => $this->city,
+                'description' => 'Testing Description'
+            ]);
+
+            return redirect()->route('payment');
+        }
+
         
+
+    }
+
+    public function thankyou() {
         $this->thankyou = 1;
 
         Cart::instance('cart')->destroy();
         session()->forget('checkout');
-
     }
 
     public function verifyforCheckout()

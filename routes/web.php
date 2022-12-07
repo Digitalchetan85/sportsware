@@ -20,6 +20,8 @@ use App\Http\Livewire\CategoryComponent;
 use App\Http\Livewire\CheckoutComponent;
 use App\Http\Livewire\DetailsComponent;
 use App\Http\Livewire\HomeComponent;
+use App\Http\Livewire\Payment;
+use App\Http\Livewire\RazorPayThankYou;
 use App\Http\Livewire\SearchComponent;
 use App\Http\Livewire\ShopComponent;
 use App\Http\Livewire\ThankyouComponent;
@@ -51,6 +53,12 @@ Route::get('/product/{slug}', DetailsComponent::class)->name('product.details');
 Route::get('/category/{category_slug}', CategoryComponent::class)->name('category.details');
 
 Route::get('/search', SearchComponent::class)->name('search');
+
+Route::get('/payment', Payment::class)->name('payment');
+
+Route::get('/razorpay-thank-you', RazorPayThankYou::class)->name('razorpay-thankyou');
+
+Route::post('/razorpay-thank-you', RazorPayThankYou::class);
 
 Route::get('/wishlist', WishlistComponent::class)->name('wishlist');
 
