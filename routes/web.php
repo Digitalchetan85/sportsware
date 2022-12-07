@@ -10,6 +10,7 @@ use App\Http\Livewire\Admin\AdminDashboardComponent;
 use App\Http\Livewire\Admin\AdminEditCategoryComponent;
 use App\Http\Livewire\Admin\AdminEditCouponsComponent;
 use App\Http\Livewire\Admin\AdminEditProductComponent;
+use App\Http\Livewire\Admin\AdminOrderComponent;
 use App\Http\Livewire\Admin\AdminProductComponent;
 use App\Http\Livewire\Admin\AdminSaleComponent;
 use App\Http\Livewire\Admin\EditHomeSlider;
@@ -92,5 +93,7 @@ Route::middleware(['auth:sanctum','verified','authadmin'])->group(function () {
     Route::get('/admin/coupon',AdminCouponsComponent::class)->name('admin.coupons');
     Route::get('/admin/add-coupon',AdminAddCouponsComponent::class)->name('admin.add-coupon');
     Route::get('/admin/edit-coupon/{coupon_id}',AdminEditCouponsComponent::class)->name('admin.edit-coupon');
+
+    Route::get('admin/orders', AdminOrderComponent::class)->name('admin.orders');
 
 });
