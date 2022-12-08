@@ -13,8 +13,8 @@ use Illuminate\Support\Facades\Mail;
 class RazorPayThankYou extends Component
 {
     public $paymentid;
-    private $razorpayId = "rzp_test_BOZFJRyclJtXL1";
-    private $razorpaykey = "Foiy2R0WHwzdKDFUZgeK8TgC";
+    private $razorpayId = "rzp_test_kHhTGq6d0I9ltk";
+    private $razorpaykey = "9P4tuae2VemGZNrHsOlTs4Ex";
 
     private function SignatureVerify($_signature, $_paymentId, $_orderId)
     {
@@ -34,7 +34,7 @@ class RazorPayThankYou extends Component
         {
             $transaction = Transaction::where('user_id',session()->get('transaction')['userid'])->where('order_id',session()->get('transaction')['orderid'])->first();
             // dd(session()->get('transaction')['orderid']);
-            $transaction->status = 'approved';
+            $transaction->status = 'complete';
             $transaction->paymentid = $this->paymentid;
             $transaction->save();
             
@@ -43,7 +43,7 @@ class RazorPayThankYou extends Component
             session()->forget('razorpay');
             session()->forget('transaction');
             // dd(session()->get('order'));
-            $this->SendOrderConfirmationMail(session()->get('order'));
+            // $this->SendOrderConfirmationMail(session()->get('order'));
             return redirect()->route('thankyou');
         }
         else

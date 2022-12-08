@@ -10,6 +10,7 @@ return new class extends Migration
      * Run the migrations.
      *
      * @return void
+     * 
      */
     public function up()
     {
@@ -20,6 +21,7 @@ return new class extends Migration
             $table->enum('mode', ['cod','razorpay']);
             $table->enum('status', ['pending','complete','refunded','declined'])->default('pending');
             $table->timestamps();
+            $table->string('paymentid')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');
         });
