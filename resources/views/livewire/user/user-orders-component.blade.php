@@ -40,7 +40,7 @@
                                             <td>{{ $item->status }}</td>
                                             <td>{{ $item->created_at }}</td>
                                             {{-- <td><a href="{{ route('admin.orders-details',['order_id'=>$order->id ])}}" class="btn btn-info btn-sm">Details</a></td> --}}
-                                            <td><a href="{{route ('admin.order-details',['order_id'=>$item->id]) }}" class="btn btn-info btn-sm">Details</a></td>
+                                            <td><a href="{{route ('user.order-details',['order_id'=>$item->id]) }}" class="btn btn-info btn-sm">Details</a></td>
                                         </tr>
                                     @endforeach
                                 </tbody>
