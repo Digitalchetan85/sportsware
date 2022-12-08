@@ -19,6 +19,7 @@ return new class extends Migration
             $table->bigInteger('user_id')->unsigned();
             $table->bigInteger('order_id')->unsigned();
             $table->enum('mode', ['cod','razorpay']);
+            $table->string('paymentid')->nullable();
             $table->enum('status', ['pending','complete','refunded','declined'])->default('pending');
             $table->timestamps();
             $table->string('paymentid')->nullable();
