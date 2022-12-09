@@ -94,11 +94,23 @@
                                 </div>
                             </div>
                             <div class="form-group">
+                                <label for="" class="col-md-4 control-lable text-right">Product Gallery</label>
+                                <div class="col-md-4">
+                                    <input type="file" class="input-file" wire:model='images' multiple/>
+                                    @if($images)
+                                    @foreach($images as $image)
+                                    <img src="{{ $image->temporaryUrl()}}" alt="" width="120" class="img-fluid">
+                                    @endforeach
+                                    @endif
+                                    @error('images') <small class="text-danger">{{ $message }}</small> @enderror
+                                </div>
+                            </div>
+                            <div class="form-group">
                                 <label for="" class="col-md-4 control-lable text-right">Product Image</label>
                                 <div class="col-md-4">
                                     <input type="file" class="input-file" wire:model='image'/>
                                     @if($image)
-                                        <img src="{{ $image->temporaryUrl() }}" alt="" width="120" class="img-fluid">
+                                        <img src="{{ $image->temporaryUrl()}}" alt="" width="120" class="img-fluid">
                                     @endif
                                     @error('image') <small class="text-danger">{{ $message }}</small> @enderror
                                 </div>

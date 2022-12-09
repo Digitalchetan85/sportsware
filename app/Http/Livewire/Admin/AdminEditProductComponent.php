@@ -28,6 +28,9 @@ class AdminEditProductComponent extends Component
     public $newimage;
     public $product_id;
 
+    public $images;
+    public $newimages;
+
     public function mount($product_slug)
     {
         $product = Product::where('slug', $product_slug)->first();
@@ -42,6 +45,7 @@ class AdminEditProductComponent extends Component
         $this->qty = $product->quantity;
         $this->featured = $product->featured;
         $this->image = $product->image;
+        $this->images = explode(",", $product->images);
         $this->category = $product->category_id;
         $this->product_id = $product->id;
     }
@@ -115,6 +119,31 @@ class AdminEditProductComponent extends Component
             $this->newimage->storeAs('products', $imagename);
             $product->image = $imagename;
         }
+
+        if($this->newimages)
+        {
+            if($product->images)
+            {
+                $images = explode(",",$product->images);
+                foreach($images as $image)
+                {
+                    if($image)
+                    {
+                        unlink('assets/images/products'.'/'.$image);
+                    }
+                }
+            }
+
+            $imagesname='';
+            foreach($this->newimages as $key=>$image)
+            {
+                $imgName=Carbon::now()->timestamp. $key . '.' . $image->extension();
+                $image->storeAs('products', $imgName);
+                $imagesname = $imagesname . ',' .$imgName;
+            }
+            
+        }
+
         $product->category_id = $this->category;
         $product->save();
 

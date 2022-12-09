@@ -106,6 +106,25 @@
                                 </div>
                             </div>
                             <div class="form-group">
+                                <label for="" class="col-md-4 control-lable text-right">Product Gallery</label>
+                                <div class="col-md-4">
+                                    <input type="file" class="input-file" wire:model='newimages' multiple/>
+                                    @if($newimages)
+                                       @foreach($newimages as $newimage)
+                                            @if($newimage)
+                                                    <img src="{{ $newimage->temporaryUrl() }}" alt="" width="120" class="img-fluid">
+                                            @endif
+                                       @endforeach
+                                    @else
+                                        @foreach($images as $image)
+                                            @if($image)
+                                                     <img src="{{ asset('assets/images/products') }}/{{ $image }}" alt="" class="img-fluid" width="120">
+                                            @endif
+                                        @endforeach
+                                    @endif
+                                </div>
+                            </div>
+                            <div class="form-group">
                                 <label for="" class="col-md-4 control-lable text-right">Select Category</label>
                                 <div class="col-md-4">
                                     <select id="" class="form-control" wire:model='category'>

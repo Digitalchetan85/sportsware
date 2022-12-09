@@ -47,7 +47,7 @@
     </x-jet-authentication-card>
 </x-guest-layout> --}}
 
-<x-guest-layout>
+<x-base-layout>
     <main id="main" class="main-site left-sidebar">
 
 		<div class="container">
@@ -82,7 +82,7 @@
 										<label class="remember-field">
 											<input class="frm-input " name="rememberme" id="rememberme" value="forever" type="checkbox"><span>Remember me</span>
 										</label>
-										<a class="link-function left-position" href="#" title="Forgotten password?">Forgotten password?</a>
+										<a class="link-function left-position" href="{{ route('password.request') }}" title="Forgotten password?">{{ __('Forgot your password?') }}</a>
 									</fieldset>
 									<input type="submit" class="btn btn-submit" value="Login" name="submit">
 								</form>
@@ -95,4 +95,4 @@
 		</div><!--end container-->
 
 	</main>
-</x-guest-layout>
+</x-base-layout>

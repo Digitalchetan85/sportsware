@@ -11,6 +11,9 @@
         nav .hidden {
             display: block !important;
         }
+        .sclist{
+            list-style="none";
+        }
     </style>
     {{-- <div class="container">
         <div class="wrap-breadcrumb">
@@ -49,6 +52,7 @@
                                         <th>ID</th>
                                         <th>Category Name</th>
                                         <th>Category Slug</th>
+                                        <th>Sub Category</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -58,6 +62,13 @@
                                         <td>{{ $item->id }}</td>
                                         <td>{{ $item->name }}</td>
                                         <td>{{ $item->slug }}</td>
+                                        <td>
+                                            <ul class="sclist">
+                                                @foreach($item->subCategories as $scategory)
+                                                <li> <i class="fa fa-caret-right"></i>{{ $scategory->name }} <a href="{{ route('admin.edit-category',['category_id'=> $category->slug, 'scategory_id'=> $scategory->slug]) }}"> <i class="fa fa-edit"></i> </a> </li>
+                                                @endforeach
+                                            </ul>
+                                        </td>
                                         <td>
                                             <a href="{{ route('admin.edit-categories', ['category_slug'=>$item->slug]) }}"
                                                 class="btn btn-transparent"><i class="fa fa-edit text-primary"></i></a>

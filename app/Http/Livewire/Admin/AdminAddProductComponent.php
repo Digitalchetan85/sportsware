@@ -24,6 +24,8 @@ class AdminAddProductComponent extends Component
     public $featured;
     public $image;
     public $category;
+    public $images;
+
 
     public function mount()
     {
@@ -83,9 +85,22 @@ class AdminAddProductComponent extends Component
         $product->quantity = $this->qty;
         $product->featured = $this->featured;
 
+
+        // $imagename = "product-".Carbon::now()->timestamp.'.'.$this->image->extension();
         $imagename = "product-".Carbon::now()->timestamp.'.'.$this->image->extension();
         $this->image->storeAs('products', $imagename);
         $product->image = $imagename;
+        if($this->images)
+        {
+            $imagesname = '';
+            foreach($this->images as $key=>$image)
+            {
+                $imgName = Carbon::now()->timestamp. $key. '.' .$image->extension();
+                $image->storeAs('products',$imgName);
+                $imagesname = $imagesname . ',' . $imgName;
+            }
+            $product->images = $imagesname;
+        }
         $product->category_id = $this->category;
         $product->save();
 
@@ -95,6 +110,6 @@ class AdminAddProductComponent extends Component
     public function render()
     {
         $categories = Category::all();
-        return view('livewire.admin.admin-add-product-component', compact('categories'))->layout('layouts.base');
+        return view('livewire.admin.admin-add-product-component',compact('categories'))->layout('layouts.base');
     }
 }

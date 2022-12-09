@@ -23,10 +23,21 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="" class="col-md-4 control-lable text-right">Slug</label>
+                                <label for="" class="col-md-4 control-lable text-right">Category Slug</label>
                                 <div class="col-md-4">
                                     <input type="text" class="form-control input-md" placeholder="slug" wire:model='slug'/>
                                     @error('slug') <small class="text-danger">{{ $message }}</small> @enderror
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="col-md-4 control-lable text-right">Parent Category</label>
+                                <div class="col-md-4">
+                                    <select class="form-control" wire:model="category_id">
+                                        <option value="">None</option>
+                                        @foreach($categorire as $category)
+                                            <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                             </div>
                             <div class="form-group">
