@@ -31,14 +31,14 @@
 		integrity="sha512- 
 		 aEe/ZxePawj0+G2R+AaIxgrQuKT68I28qh+wgLrcAJOz3rxCP+TwrK5SPN+E5I+1IQjNtcfvb96HDagwrKRdBw=="
 		crossorigin="anonymous" referrerpolicy="no-referrer" />
-	{{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.6.1/nouislider.min.css"
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.6.1/nouislider.min.css"
 		integrity="sha512- 
 		 qveKnGrvOChbSzAdtSs8p69eoLegyh+1hwOMbmpCViIwj7rn4oJjdmMvWOuyQlTOZgTlZA0N2PXA7iA8/2TUYA=="
-		crossorigin="anonymous" referrerpolicy="no-referrer" /> --}}
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 		<link rel="stylesheet" href="assets/css/bootstrap.min.css">
 
-		{{-- <script>
+		<script>
 			WebFontConfig = {
 				google: { families: [ 'Open+Sans:300,400,600,700,800', 'Poppins:300,400,500,600,700', 							'Shadows+Into+Light:400' ] }
 			};
@@ -48,7 +48,7 @@
 				wf.async = true;
 				s.parentNode.insertBefore( wf, s );
 			} )( document );
-		</script> --}}
+		</script>
 
 	@livewireStyles
 </head>
