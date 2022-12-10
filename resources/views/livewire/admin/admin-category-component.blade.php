@@ -12,7 +12,15 @@
             display: block !important;
         }
         .sclist{
-            list-style="none";
+            list-style="none";    
+        }
+        .sclist li{
+            line-height:33px;
+            border-bottom:1px solid #ccc;
+        }
+        .slink i{
+            font-size:16px;
+            margin-left:12px;
         }
     </style>
     {{-- <div class="container">
@@ -65,7 +73,9 @@
                                         <td>
                                             <ul class="sclist">
                                                 @foreach($item->subCategories as $scategory)
-                                                <li> <i class="fa fa-caret-right"></i>{{ $scategory->name }} <a href="{{ route('admin.edit-category',['category_id'=> $category->slug, 'scategory_id'=> $scategory->slug]) }}"> <i class="fa fa-edit"></i> </a> </li>
+                                                <li> <i class="fa fa-caret-right"></i>{{ $scategory->name }} <a href="{{ route('admin.edit-categories',['category_slug'=> $item->slug, 'scategory_slug'=> $item->slug]) }}" class="slink"> <i class="fa fa-edit"></i> </a> 
+                                                    <a href="#" onclick="confirm('Are You Sure , You Want To Delete this SubCategory?') || event.stopImmediatePropagation()" wire:click.prevent="deleteSubcategory ({{ $scategory->id}})" class="slink"> <i class="fa fa-trash text-danger"></i></a>
+                                                </li>
                                                 @endforeach
                                             </ul>
                                         </td>

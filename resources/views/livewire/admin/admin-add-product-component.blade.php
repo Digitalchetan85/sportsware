@@ -94,6 +94,16 @@
                                 </div>
                             </div>
                             <div class="form-group">
+                                <label for="" class="col-md-4 control-lable text-right">Product Image</label>
+                                <div class="col-md-4">
+                                    <input type="file" class="input-file" wire:model='image'/>
+                                    @if($image)
+                                        <img src="{{ $image->temporaryUrl()}}" alt="" width="120" class="img-fluid">
+                                    @endif
+                                    @error('image') <small class="text-danger">{{ $message }}</small> @enderror
+                                </div>
+                            </div>
+                            <div class="form-group">
                                 <label for="" class="col-md-4 control-lable text-right">Product Gallery</label>
                                 <div class="col-md-4">
                                     <input type="file" class="input-file" wire:model='images' multiple/>
@@ -106,25 +116,27 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="" class="col-md-4 control-lable text-right">Product Image</label>
+                                <label for="" class="col-md-4 control-lable text-right">Category</label>
                                 <div class="col-md-4">
-                                    <input type="file" class="input-file" wire:model='image'/>
-                                    @if($image)
-                                        <img src="{{ $image->temporaryUrl()}}" alt="" width="120" class="img-fluid">
-                                    @endif
-                                    @error('image') <small class="text-danger">{{ $message }}</small> @enderror
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="" class="col-md-4 control-lable text-right">Select Category</label>
-                                <div class="col-md-4">
-                                    <select id="" class="form-control" wire:model='category'>
+                                    <select id="" class="form-control" wire:model='category' wire:change='changeSubcategory'>
                                         <option value="">Select Category</option>
                                         @foreach ($categories as $category)
                                             <option value="{{ $category->id }}">{{ $category->name }}</option>
                                         @endforeach
                                     </select>
                                     @error('category') <small class="text-danger">{{ $message }}</small> @enderror
+                                </div>  
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="col-md-4 control-lable text-right">Sub Category</label>
+                                <div class="col-md-4">
+                                    <select id="" class="form-control" wire:model='scategory_id'>
+                                        <option value="0">Select Category</option>
+                                        @foreach ($scategories as $scategory)
+                                            <option value="{{ $scategory->id }}">{{ $scategory->name }}</option>
+                                        @endforeach
+                                    </select>
+                                    @error('scategory_id') <small class="text-danger">{{ $message }}</small> @enderror
                                 </div>  
                             </div>
                             <div class="form-group">

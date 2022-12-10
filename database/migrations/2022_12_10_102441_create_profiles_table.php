@@ -10,20 +10,22 @@ return new class extends Migration
      * Run the migrations.
      *
      * @return void
-     * 
      */
     public function up()
     {
-        Schema::create('transactions', function (Blueprint $table) {
+        Schema::create('profiles', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('user_id')->unsigned();
-            $table->bigInteger('order_id')->unsigned();
-            $table->enum('mode', ['cod','razorpay']);
-            $table->string('paymentid')->nullable();
-            $table->enum('status', ['pending','complete','refunded','declined'])->default('pending');
+            $table->string('image')->nullable();
+            $table->string('mobile')->nullable();
+            $table->string('line1')->nullable();
+            $table->string('line2')->nullable();
+            $table->string('city')->nullable();
+            $table->string('state')->nullable();
+            $table->string('country')->nullable();
+            $table->string('zipcode')->nullable();
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');
         });
     }
 
@@ -34,6 +36,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('transactions');
+        Schema::dropIfExists('profiles');
     }
 };

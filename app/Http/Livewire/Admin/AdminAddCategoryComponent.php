@@ -34,6 +34,8 @@ class AdminAddCategoryComponent extends Component
             'slug' => 'required|unique:categories'
         ]);
 
+        // dd($this->category_id);
+
         if($this->category_id) {
             $scategory = new Subcategory();
             $scategory->name = $this->name;
@@ -43,13 +45,14 @@ class AdminAddCategoryComponent extends Component
 
         }
 
-        else{
-            $scategory = new Subcategory();
-            $scategory->name = $this->name;
-            $scategory->slug = $this->slug;
-            $scategory->category_id = $this->category_id;
-            $scategory->save();
+        else {
+            $category = new category();
+            $category->name = $this->name;
+            $category->slug = $this->slug;
+            $category->save();
+           
         }
+        session()->flash('success', 'Category Has Been Created Successfully');
     }
 
     public function addCategory()

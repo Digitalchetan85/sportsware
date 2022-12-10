@@ -55,7 +55,7 @@ class AdminEditCategoryComponent extends Component
     {
         $this->validate([
             'name' => 'required',
-            'slug' => 'required|unique:categories',
+            'slug' => 'required',
         ]);
 
         if($this->scategory_id) {

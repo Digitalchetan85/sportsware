@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Admin;
 
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\Subcategory;
 use Illuminate\Support\Carbon;
 use Livewire\Component;
 use Illuminate\Support\Str;
@@ -25,6 +26,7 @@ class AdminAddProductComponent extends Component
     public $image;
     public $category;
     public $images;
+    public $scategory_id;
 
 
     public function mount()
@@ -102,14 +104,25 @@ class AdminAddProductComponent extends Component
             $product->images = $imagesname;
         }
         $product->category_id = $this->category;
+        if($this->scategory_id)
+        {
+            $product->subcategory_id = $this->scategory_id;
+        }
         $product->save();
 
         session()->flash('success', 'Product added successfully');
     }
 
+    public function changeSubcategory()
+    {
+        $this->scategory_id = 0;
+    }
+
     public function render()
     {
+
         $categories = Category::all();
-        return view('livewire.admin.admin-add-product-component',compact('categories'))->layout('layouts.base');
+        $scategories = Subcategory::where('category_id', $this->category)->get();
+        return view('livewire.admin.admin-add-product-component',compact('categories','scategories'))->layout('layouts.base');
     }
 }

@@ -34,7 +34,7 @@
                                 <div class="col-md-4">
                                     <select class="form-control" wire:model="category_id">
                                         <option value="">None</option>
-                                        @foreach($categorire as $category)
+                                        @foreach($categories as $category)
                                             <option value="{{ $category->id }}">{{ $category->name }}</option>
                                         @endforeach
                                     </select>
