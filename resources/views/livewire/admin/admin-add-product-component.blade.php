@@ -140,8 +140,24 @@
                                 </div>  
                             </div>
                             <div class="form-group">
-                                <label for="" class="col-md-4 control-lable"></label>
+                                <label for="" class="col-md-4 control-lable text-right">Product Attribute</label>
+                                <div class="col-md-3">
+                                    <select id="" class="form-control" wire:model='attr'>
+                                        <option value="0">Select Attribute</option>
+                                        @foreach ($pattributes as $pattribute)
+                                            <option value="{{ $pattribute->id }}">{{ $pattribute->name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>  
+                                <div class="col-md-1">
+                                    <button class="btn btn-info" type="button" wire:click.prevent="add">Add</button>
+                                </div>
+                            </div>
+                          
+                            <div class="form-group">
+                                <label for="" class="col-md-4 control-lable">{{ $pattribute->where('id',$attribute_arr[$key])->first()->name }}</label>
                                 <div class="col-md-4">
+                                    <input type="text" placeholder="{{ $pattribute->where('id',$attribute_arr[$key])->first()->name }}" class="form-control input-md" wire:model="attribute_value.{{ $value }}" />
                                     <button class="btn btn-primary" type="submit">Submit</button>
                                 </div>
                             </div>

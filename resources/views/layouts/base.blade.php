@@ -158,9 +158,14 @@
 											<a title="All Orders" href="{{ route('admin.orders') }}">All Orders</a>
 										</li>
 										<li class="menu-item">
+											<a title="Attributes" href="{{ route('admin.attribute') }}"> Attributes</a>
+										</li>
+										
+										<li class="menu-item">
 											<a title="dashboard" href="{{ route('logout') }}"
 												onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
 										</li>
+										
 										<form action="{{ route('logout') }}" id="logout-form" method="POST">
 											@csrf
 										</form>

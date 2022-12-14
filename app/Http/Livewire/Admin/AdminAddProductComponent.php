@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Admin;
 
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\ProductAttribute;
 use App\Models\Subcategory;
 use Illuminate\Support\Carbon;
 use Livewire\Component;
@@ -28,11 +29,28 @@ class AdminAddProductComponent extends Component
     public $images;
     public $scategory_id;
 
+    public $attr;
+    public $inputs = [];
+    public $attribute_arr = [];
+    public $attribute_value;
+    // public $a_name;
+    // public $key;
+
+
 
     public function mount()
     {
         $this->stock_status = 'instock';
         $this->featured = 0;
+    }
+
+    public function add()
+    {
+        if(!in_array($this->attr,$this->attribute_arr))
+        {
+            array_push($this->inputs,$this->attr);
+            array_push($this->attribute_arr,$this->attr);
+        }
     }
 
     public function generateSlug()
@@ -123,6 +141,8 @@ class AdminAddProductComponent extends Component
 
         $categories = Category::all();
         $scategories = Subcategory::where('category_id', $this->category)->get();
-        return view('livewire.admin.admin-add-product-component',compact('categories','scategories'))->layout('layouts.base');
+
+        $pattributes = ProductAttribute::all();
+        return view('livewire.admin.admin-add-product-component',compact('categories','scategories','pattributes '))->layout('layouts.base');
     }
 }
