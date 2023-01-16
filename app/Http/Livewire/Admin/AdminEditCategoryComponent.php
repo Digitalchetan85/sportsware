@@ -26,6 +26,7 @@ class AdminEditCategoryComponent extends Component
             $this->scategory_id = $scategory->id;
             $this->category_id = $scategory->category_id;
             $this->name = $scategory->name;
+            // dd($scategory->name);
             $this->slug = $scategory->slug;
         }
         else{
@@ -68,8 +69,10 @@ class AdminEditCategoryComponent extends Component
         }
         else{
             $category = Category::find($this->category_id);
-            $category->name = $this->name;
+            // dd("category_id",$this->category_id, "details",$category);
+                        $category->name = $this->name;
             $category->slug = $this->slug;
+            // $category->none = $this->none;
             $category->save();
         }
 

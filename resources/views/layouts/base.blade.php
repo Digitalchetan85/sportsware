@@ -72,20 +72,27 @@
 						<div class="topbar-menu left-menu">
 							<ul>
 								<li class="menu-item">
-									<a title="Hotline: (+123) 456 789" href="#"><span
-											class="icon label-before fa fa-mobile"></span>Hotline: (+123) 456 789</a>
+									<a title="" href="info@shanthasportsware.com"><span
+											class="icon label-before fa fa-envelope text-danger"></span>info@shanthasportsware.com</a>
 								</li>
+								{{-- <li> --}}
+								{{-- <i class="fa fa-envelope text-danger" aria-hidden="true"> sportswear@gmail.com</i> --}}
+							{{-- </li> --}}
 							</ul>
 						</div>
 						<div class="topbar-menu right-menu">
 							<ul>
 								<li class="menu-item lang-menu menu-item-has-children parent">
-									<a title="English" href="#"><span class="img label-before"><img
+									<a title="English" href="#">
+										{{-- <span class="img label-before"><img
 												src="{{ asset('assets/images/lang-en.png') }}"
-												alt="lang-en"></span>English<i class="fa fa-angle-down"
-											aria-hidden="true"></i></a>
+												alt="lang-en">
+											</span> --}}
+											{{-- English<i class="fa fa-angle-down"
+											aria-hidden="true"></i> --}}
+										</a>
 									<ul class="submenu lang">
-										<li class="menu-item"><a title="hungary" href="#"><span
+										{{-- <li class="menu-item"><a title="hungary" href="#"><span
 													class="img label-before"><img
 														src="{{ asset('assets/images/lang-hun.png') }}"
 														alt="lang-hun"></span>Hungary</a></li>
@@ -100,10 +107,10 @@
 										<li class="menu-item"><a title="canada" href="#"><span
 													class="img label-before"><img
 														src="{{ asset('assets/images/lang-can.png') }}"
-														alt="lang-can"></span>Canada</a></li>
+														alt="lang-can"></span>Canada</a></li> --}}
 									</ul>
 								</li>
-								<li class="menu-item menu-item-has-children parent">
+								{{-- <li class="menu-item menu-item-has-children parent">
 									<a title="Dollar (USD)" href="#">Dollar (USD)<i class="fa fa-angle-down"
 											aria-hidden="true"></i></a>
 									<ul class="submenu curency">
@@ -117,7 +124,7 @@
 											<a title="Dollar (USD)" href="#">Dollar (USD)</a>
 										</li>
 									</ul>
-								</li>
+								</li> --}}
 								@if(Route::has('login'))
 								@auth
 								@if(Auth::user()->utype == "ADM")
@@ -216,8 +223,8 @@
 					<div class="mid-section main-info-area">
 
 						<div class="wrap-logo-top left-section">
-							<a href="index.html" class="link-to-home"><img
-									src="{{ asset('assets/images/logo-top-1.png') }}" alt="mercado"></a>
+							<a href="{{ route('home') }}" class="link-to-home"><img
+									src="{{ asset('assets/images/logo-01.png') }}" alt="mercado"></a>
 						</div>
 
 						@livewire('header-search-component')
@@ -243,7 +250,7 @@
 					<div class="header-nav-section">
 						<div class="container">
 							<ul class="nav menu-nav clone-main-menu" id="mercado_haead_menu" data-menuname="Sale Info">
-								<li class="menu-item"><a href="#" class="link-term">Weekly Featured</a><span
+								{{-- <li class="menu-item"><a href="#" class="link-term">Weekly Featured</a><span
 										class="nav-label hot-label">hot</span></li>
 								<li class="menu-item"><a href="#" class="link-term">Hot Sale items</a><span
 										class="nav-label hot-label">hot</span></li>
@@ -252,7 +259,7 @@
 								<li class="menu-item"><a href="#" class="link-term">Top Selling</a><span
 										class="nav-label hot-label">hot</span></li>
 								<li class="menu-item"><a href="#" class="link-term">Top rated items</a><span
-										class="nav-label hot-label">hot</span></li>
+										class="nav-label hot-label">hot</span></li> --}}
 							</ul>
 						</div>
 					</div>
@@ -348,16 +355,19 @@
 										<ul>
 											<li>
 												<i class="fa fa-map-marker" aria-hidden="true"></i>
-												<p class="contact-txt">45 Grand Central Terminal New York,NY 1017 United
-													State USA</p>
+												<p class="contact-txt">
+													{{-- 45 Grand Central Terminal New York,NY 1017 United
+													State USA --}}
+													483, 1st Floor, 8th Cross, 10th Main, HAL 3rd Stage, Jeevan Bima Nagar, Bengaluru, Karnataka 560075
+												</p>
 											</li>
 											<li>
 												<i class="fa fa-phone" aria-hidden="true"></i>
-												<p class="contact-txt">(+123) 456 789 - (+123) 666 888</p>
+												<p class="contact-txt">+91 9980898483</p>
 											</li>
 											<li>
 												<i class="fa fa-envelope" aria-hidden="true"></i>
-												<p class="contact-txt">Contact@yourcompany.com</p>
+												<p class="contact-txt">info@shanthasportsware.com</p>
 											</li>
 										</ul>
 									</div>
@@ -368,16 +378,16 @@
 						<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
 
 							<div class="wrap-footer-item">
-								<h3 class="item-header">Hot Line</h3>
-								<div class="item-content">
+								{{-- <h3 class="item-header">Hot Line</h3> --}}
+								{{-- <div class="item-content">
 									<div class="wrap-hotline-footer">
-										<span class="desc">Call Us toll Free</span>
-										<b class="phone-number">(+123) 456 789 - (+123) 666 888</b>
+										<span class="desc">Call Us </span>
+										<b class="phone-number">+91 9980898483</b>
 									</div>
-								</div>
+								</div> --}}
 							</div>
 
-							<div class="wrap-footer-item footer-item-second">
+							{{-- <div class="wrap-footer-item footer-item-second">
 								<h3 class="item-header">Sign up for newsletter</h3>
 								<div class="item-content">
 									<div class="wrap-newletter-footer">
@@ -388,7 +398,7 @@
 										</form>
 									</div>
 								</div>
-							</div>
+							</div> --}}
 
 						</div>
 
@@ -399,12 +409,14 @@
 									<div class="item-content">
 										<div class="wrap-vertical-nav">
 											<ul>
-												<li class="menu-item"><a href="#" class="link-term">My Account</a></li>
-												<li class="menu-item"><a href="#" class="link-term">Brands</a></li>
-												<li class="menu-item"><a href="#" class="link-term">Gift
-														Certificates</a></li>
-												<li class="menu-item"><a href="#" class="link-term">Affiliates</a></li>
-												<li class="menu-item"><a href="#" class="link-term">Wish list</a></li>
+												<li class="menu-item"><a href="{{ route('login') }}" class="link-term">Login</a></li>
+												<li class="menu-item"><a href="{{ route('home') }}" class="link-term">Home</a></li>
+												{{-- <li class="menu-item"><a href="#" class="link-term">Gift
+														Certificates</a></li> --}}
+												{{-- <li class="menu-item"><a href="{{ route('contact') }}" class="link-term">Contact Us</a></li> --}}
+												<li class="menu-item"><a href="{{ route('wishlist') }}" class="link-term">Wishlist</a></li>
+												<li class="menu-item"><a href="{{ route('shop') }}" class="link-term">Shop</a></li>
+												<li class="menu-item"><a href="{{ route('cart') }}" class="link-term">Cart</a></li>
 											</ul>
 										</div>
 									</div>
@@ -414,11 +426,11 @@
 									<div class="item-content">
 										<div class="wrap-vertical-nav">
 											<ul>
-												<li class="menu-item"><a href="#" class="link-term">Contact Us</a></li>
-												<li class="menu-item"><a href="#" class="link-term">Returns</a></li>
-												<li class="menu-item"><a href="#" class="link-term">Site Map</a></li>
-												<li class="menu-item"><a href="#" class="link-term">Specials</a></li>
-												<li class="menu-item"><a href="#" class="link-term">Order History</a>
+												<li class="menu-item"><a href="{{ route('contact') }}" class="link-term">Contact Us</a></li>
+												{{-- <li class="menu-item"><a href="#" class="link-term">Returns</a></li> --}}
+												{{-- <li class="menu-item"><a href="#" class="link-term">Site Map</a></li> --}}
+												{{-- <li class="menu-item"><a href="#" class="link-term">Specials</a></li> --}}
+												<li class="menu-item"><a href="{{ route('admin.orders') }}" class="link-term">Order History</a>
 												</li>
 											</ul>
 										</div>
@@ -431,7 +443,7 @@
 
 					<div class="row">
 
-						<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
+						{{-- <div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
 							<div class="wrap-footer-item">
 								<h3 class="item-header">We Using Safe Payments:</h3>
 								<div class="item-content">
@@ -440,7 +452,7 @@
 									</div>
 								</div>
 							</div>
-						</div>
+						</div> --}}
 
 						<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
 							<div class="wrap-footer-item">
@@ -452,19 +464,19 @@
 														class="fa fa-twitter" aria-hidden="true"></i></a></li>
 											<li><a href="#" class="link-to-item" title="facebook"><i
 														class="fa fa-facebook" aria-hidden="true"></i></a></li>
-											<li><a href="#" class="link-to-item" title="pinterest"><i
-														class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+											<li><a href="#" class="link-to-item" title="whatsapp"><i
+														class="fa fa-whatsapp" aria-hidden="true"></i></a></li>
 											<li><a href="#" class="link-to-item" title="instagram"><i
 														class="fa fa-instagram" aria-hidden="true"></i></a></li>
-											<li><a href="#" class="link-to-item" title="vimeo"><i class="fa fa-vimeo"
-														aria-hidden="true"></i></a></li>
+											{{-- <li><a href="#" class="link-to-item" title="vimeo"><i class="fa fa-vimeo"
+														aria-hidden="true"></i></a></li> --}}
 										</ul>
 									</div>
 								</div>
 							</div>
 						</div>
 
-						<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
+						{{-- <div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
 							<div class="wrap-footer-item">
 								<h3 class="item-header">Dowload App</h3>
 								<div class="item-content">
@@ -485,13 +497,13 @@
 									</div>
 								</div>
 							</div>
-						</div>
+						</div> --}}
 
 					</div>
 				</div>
 
 				<div class="wrap-back-link">
-					<div class="container">
+					{{-- <div class="container">
 						<div class="back-link-box">
 							<h3 class="backlink-title">Quick Links</h3>
 							<div class="back-link-row">
@@ -561,7 +573,7 @@
 
 							</div>
 						</div>
-					</div>
+					</div> --}}
 				</div>
 
 			</div>
@@ -569,7 +581,7 @@
 			<div class="coppy-right-box">
 				<div class="container">
 					<div class="coppy-right-item item-left">
-						<p class="coppy-right-text">Copyright © 2020 Surfside Media. All rights reserved</p>
+						<p class="coppy-right-text">Copyright © 2020 Shanthas Sportswear. All rights reserved</p>
 					</div>
 					<div class="coppy-right-item item-right">
 						<div class="wrap-nav horizontal-nav">

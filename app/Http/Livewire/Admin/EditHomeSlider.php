@@ -77,7 +77,7 @@ class EditHomeSlider extends Component
         // $slide->image = $this->image;
         if($this->newimage)
         {
-            unlink('assets/images/sliders'.'/'.$slide->image);
+            // unlink('assets/images/sliders'.'/'.$slide->image);
             $imagename = 'slide-'.Carbon::now()->timestamp.'.'.$this->newimage->extension();
             $this->newimage->storeAs('sliders', $imagename);
             $slide->image = $imagename;
