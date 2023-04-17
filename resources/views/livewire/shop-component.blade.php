@@ -182,7 +182,11 @@
 								<li class="list-item"><a data-label='Show less<i class="fa fa-angle-up" aria-hidden="true"></i>' class="btn-control control-show-more" href="#">Show more<i class="fa fa-angle-down" aria-hidden="true"></i></a></li>
 							</ul>
 						</div>
+<<<<<<< HEAD
 					</div> --}}
+=======
+					</div>
+>>>>>>> cb2b4baba263cfb1e0795e6ef5fdb84fc99cb89d
 					<!-- brand widget-->
 
 					<div class="widget mercado-widget filter-widget price-filter">

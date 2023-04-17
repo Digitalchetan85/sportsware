@@ -73,7 +73,11 @@
 										<i class="fa fa-envelope" aria-hidden="true"></i>
 										<div class="right-info">
 											<b>Email</b>
+<<<<<<< HEAD
 											<p>info@shanthasdesigns.com</p>
+=======
+											<p>info@shanthasportssware.com</p>
+>>>>>>> cb2b4baba263cfb1e0795e6ef5fdb84fc99cb89d
 										</div>
 									</div>
 

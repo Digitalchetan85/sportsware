@@ -72,8 +72,13 @@
 						<div class="topbar-menu left-menu">
 							<ul>
 								<li class="menu-item">
+<<<<<<< HEAD
 									<a title="" href="iinfo@shanthasdesigns.com"><span
 											class="icon label-before fa fa-envelope text-danger"></span>info@shanthasdesigns.com</a>
+=======
+									<a title="" href="info@shanthasportsware.com"><span
+											class="icon label-before fa fa-envelope text-danger"></span>info@shanthasportsware.com</a>
+>>>>>>> cb2b4baba263cfb1e0795e6ef5fdb84fc99cb89d
 								</li>
 								{{-- <li> --}}
 								{{-- <i class="fa fa-envelope text-danger" aria-hidden="true"> sportswear@gmail.com</i> --}}
@@ -224,7 +229,11 @@
 
 						<div class="wrap-logo-top left-section">
 							<a href="{{ route('home') }}" class="link-to-home"><img
+<<<<<<< HEAD
 									src="{{ asset('assets/images/logo-des.png') }}" alt="mercado"></a>
+=======
+									src="{{ asset('assets/images/logo-01.png') }}" alt="mercado"></a>
+>>>>>>> cb2b4baba263cfb1e0795e6ef5fdb84fc99cb89d
 						</div>
 
 						@livewire('header-search-component')
@@ -367,7 +376,11 @@
 											</li>
 											<li>
 												<i class="fa fa-envelope" aria-hidden="true"></i>
+<<<<<<< HEAD
 												<p class="contact-txt">info@shanthasdesigns.com</p>
+=======
+												<p class="contact-txt">info@shanthasportsware.com</p>
+>>>>>>> cb2b4baba263cfb1e0795e6ef5fdb84fc99cb89d
 											</li>
 										</ul>
 									</div>
@@ -379,12 +392,16 @@
 
 							<div class="wrap-footer-item">
 								{{-- <h3 class="item-header">Hot Line</h3> --}}
+<<<<<<< HEAD
 								<div class="item-content">
+=======
+								{{-- <div class="item-content">
+>>>>>>> cb2b4baba263cfb1e0795e6ef5fdb84fc99cb89d
 									<div class="wrap-hotline-footer">
 										<span class="desc">Call Us </span>
 										<b class="phone-number">+91 9980898483</b>
 									</div>
-								</div>
+								</div> --}}
 							</div>
 
 							{{-- <div class="wrap-footer-item footer-item-second">
@@ -409,12 +426,14 @@
 									<div class="item-content">
 										<div class="wrap-vertical-nav">
 											<ul>
-												<li class="menu-item"><a href="#" class="link-term">My Account</a></li>
-												<li class="menu-item"><a href="#" class="link-term">Brands</a></li>
-												<li class="menu-item"><a href="#" class="link-term">Gift
-														Certificates</a></li>
-												<li class="menu-item"><a href="#" class="link-term">Affiliates</a></li>
-												<li class="menu-item"><a href="#" class="link-term">Wish list</a></li>
+												<li class="menu-item"><a href="{{ route('login') }}" class="link-term">Login</a></li>
+												<li class="menu-item"><a href="{{ route('home') }}" class="link-term">Home</a></li>
+												{{-- <li class="menu-item"><a href="#" class="link-term">Gift
+														Certificates</a></li> --}}
+												{{-- <li class="menu-item"><a href="{{ route('contact') }}" class="link-term">Contact Us</a></li> --}}
+												<li class="menu-item"><a href="{{ route('wishlist') }}" class="link-term">Wishlist</a></li>
+												<li class="menu-item"><a href="{{ route('shop') }}" class="link-term">Shop</a></li>
+												<li class="menu-item"><a href="{{ route('cart') }}" class="link-term">Cart</a></li>
 											</ul>
 										</div>
 									</div>
@@ -424,11 +443,11 @@
 									<div class="item-content">
 										<div class="wrap-vertical-nav">
 											<ul>
-												<li class="menu-item"><a href="#" class="link-term">Contact Us</a></li>
-												<li class="menu-item"><a href="#" class="link-term">Returns</a></li>
-												<li class="menu-item"><a href="#" class="link-term">Site Map</a></li>
-												<li class="menu-item"><a href="#" class="link-term">Specials</a></li>
-												<li class="menu-item"><a href="#" class="link-term">Order History</a>
+												<li class="menu-item"><a href="{{ route('contact') }}" class="link-term">Contact Us</a></li>
+												{{-- <li class="menu-item"><a href="#" class="link-term">Returns</a></li> --}}
+												{{-- <li class="menu-item"><a href="#" class="link-term">Site Map</a></li> --}}
+												{{-- <li class="menu-item"><a href="#" class="link-term">Specials</a></li> --}}
+												<li class="menu-item"><a href="{{ route('admin.orders') }}" class="link-term">Order History</a>
 												</li>
 											</ul>
 										</div>
@@ -579,7 +598,11 @@
 			<div class="coppy-right-box">
 				<div class="container">
 					<div class="coppy-right-item item-left">
+<<<<<<< HEAD
 						<p class="coppy-right-text">Copyright © 2020 Shanthas Designs. All rights reserved</p>
+=======
+						<p class="coppy-right-text">Copyright © 2020 Shanthas Sportswear. All rights reserved</p>
+>>>>>>> cb2b4baba263cfb1e0795e6ef5fdb84fc99cb89d
 					</div>
 					<div class="coppy-right-item item-right">
 						<div class="wrap-nav horizontal-nav">
