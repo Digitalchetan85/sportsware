@@ -18,7 +18,7 @@
                             <div class="form-group">
                                 <label for="" class="col-md-4 control-lable text-right">Title</label>
                                 <div class="col-md-4">
-                                    <input type="text" class="form-control input-md" placeholder="Title" wire:model='title'/>
+                                    <input type="text" class="form-control input-md " placeholder="Title" wire:model='title'/>
                                     @error('title') <small class="text-danger">{{ $message }}</small> @enderror
                                 </div>
                             </div>

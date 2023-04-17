@@ -73,7 +73,7 @@
 										<i class="fa fa-envelope" aria-hidden="true"></i>
 										<div class="right-info">
 											<b>Email</b>
-											<p>Support1@Mercado.com</p>
+											<p>info@shanthasdesigns.com</p>
 										</div>
 									</div>
 
@@ -81,15 +81,15 @@
 										<i class="fa fa-phone" aria-hidden="true"></i>
 										<div class="right-info">
 											<b>Phone</b>
-											<p>0123-465-789-111</p>
+											<p>+91 9980898483</p>
 										</div>
 									</div>
 
 									<div class="icon-box-item">
 										<i class="fa fa-map-marker" aria-hidden="true"></i>
 										<div class="right-info">
-											<b>Mail Office</b>
-											<p>Sed ut perspiciatis unde omnis<br />Street Name, Los Angeles</p>
+											<b>Office Address</b>
+											<p>483, 1st Floor, 8th Cross, 10th Main, HAL 3rd Stage, Jeevan Bima Nagar, Bengaluru, Karnataka 560075</p>
 										</div>
 									</div>
 

@@ -37,7 +37,9 @@
                                         @foreach($categories as $category)
                                             <option value="{{ $category->id }}">{{ $category->name }}</option>
                                         @endforeach
+                                        
                                     </select>
+                                    @error('slug') <small class="text-danger">{{ $message }}</small> @enderror
                                 </div>
                             </div>
                             <div class="form-group">

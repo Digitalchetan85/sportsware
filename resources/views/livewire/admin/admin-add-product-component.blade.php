@@ -155,9 +155,10 @@
                             </div>
                           
                             <div class="form-group">
-                                <label for="" class="col-md-4 control-lable">{{ $pattribute->where('id',$attribute_arr[$key])->first()->name }}</label>
+                                {{-- <label for="" class="col-md-4 control-lable">{{ $pattribute->where('id',$attribute_arr[$key]+1)->first()->name }}</label> --}}
+                                <label for="" class="col-md-4 control-lable"></label>
                                 <div class="col-md-4">
-                                    <input type="text" placeholder="{{ $pattribute->where('id',$attribute_arr[$key])->first()->name }}" class="form-control input-md" wire:model="attribute_value.{{ $value }}" />
+                                    {{-- <input type="text" placeholder="{{ $pattribute->where('id',$attribute_arr[$key])->first()->name }}" class="form-control input-md" wire:model="attribute_value.{{ $value }}" /> --}}
                                     <button class="btn btn-primary" type="submit">Submit</button>
                                 </div>
                             </div>

@@ -18,7 +18,7 @@
 			<div class="wrap-breadcrumb">
 				<ul>
 					<li class="item-link"><a href="#" class="link">home</a></li>
-					<li class="item-link"><span>Digital & Electronics</span></li>
+					<li class="item-link"><span>Corporate Gifting</span></li>
 				</ul>
 			</div>
 			<div class="row">
@@ -27,13 +27,13 @@
 
 					<div class="banner-shop">
 						<a href="#" class="banner-link">
-							<figure><img src="{{ asset('assets/images/shop-banner.jpg') }}" alt=""></figure>
+							<figure><img src="{{ asset('assets/images/shop.png') }}" alt=""></figure>
 						</a>
 					</div>
 
 					<div class="wrap-shop-control">
 
-						<h1 class="shop-title">Digital & Electronics</h1>
+						<h1 class="shop-title">Corporate Gifting</h1>
 
 						<div class="wrap-right">
 
@@ -165,7 +165,7 @@
 						</div>
 					</div><!-- Categories widget-->
 
-					<div class="widget mercado-widget filter-widget brand-widget">
+					{{-- <div class="widget mercado-widget filter-widget brand-widget">
 						<h2 class="widget-title">Brand</h2>
 						<div class="widget-content">
 							<ul class="list-style vertical-list list-limited" data-show="6">
@@ -182,20 +182,22 @@
 								<li class="list-item"><a data-label='Show less<i class="fa fa-angle-up" aria-hidden="true"></i>' class="btn-control control-show-more" href="#">Show more<i class="fa fa-angle-down" aria-hidden="true"></i></a></li>
 							</ul>
 						</div>
-					</div><!-- brand widget-->
+					</div> --}}
+					<!-- brand widget-->
 
 					<div class="widget mercado-widget filter-widget price-filter">
-						<h2 class="widget-title">Price - ₹{{ $min_price }} - ₹{{ $max_price }}</h2>
+						{{-- <h2 class="widget-title">Price - ₹{{ $min_price }} - ₹{{ $max_price }}</h2> --}}
 						<div class="widget-content" wire:ignore>
-							{{-- <div id="slider-range"></div>
+							<div id="slider-range"></div>
 							<p>
-								<label for="amount">Price:</label>
-								<input type="text" id="amount" readonly>
-								<button class="filter-submit">Filter</button>
-							</p> --}}
+								{{-- <label for="amount">Price:</label> --}}
+								{{-- <input type="text" id="amount" readonly> --}}
+								{{-- <button class="filter-submit">Filter</button> --}}
+							</p>
 							<div id="slider" style="margin-bottom:30px !important;"></div>
 						</div>
-					</div><!-- Price-->
+					</div>
+					<!-- Price-->
 
 					<div class="widget mercado-widget filter-widget">
 						<h2 class="widget-title">Color</h2>
@@ -221,12 +223,12 @@
 								<li class="list-item"><a class="filter-link " href="#">xl</a></li>
 							</ul>
 							<div class="widget-banner">
-								<figure><img src="{{ asset('assets/images/size-banner-widget.jpg') }}" width="270" height="331" alt=""></figure>
+								{{-- <figure><img src="{{ asset('assets/images/size-banner-widget.jpg') }}" width="270" height="331" alt=""></figure> --}}
 							</div>
 						</div>
 					</div><!-- Size -->
 
-					<div class="widget mercado-widget widget-product">
+					{{-- <div class="widget mercado-widget widget-product">
 						<h2 class="widget-title">Popular Products</h2>
 						<div class="widget-content">
 							<ul class="products">
@@ -288,7 +290,8 @@
 
 							</ul>
 						</div>
-					</div><!-- brand widget-->
+					</div> --}}
+					<!-- brand widget-->
 
 				</div><!--end sitebar-->
 
@@ -307,7 +310,7 @@
 			connect:true,
 			range: {
 				'min':1,
-				'max':1000
+				'max':5000
 			},
 			pips: {
 				mode:'steps',

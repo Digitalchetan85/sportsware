@@ -43,13 +43,13 @@
 			<div class="wrap-banner style-twin-default">
 				<div class="banner-item">
 					<a href="#" class="link-banner banner-effect-1">
-						<figure><img src="{{ asset('assets/images/home-1-banner-1.jpg') }}" alt="" width="580"
+						<figure><img src="{{ asset('assets/images/banner-sli-1.png') }}" alt="" width="580"
 								height="190"></figure>
 					</a>
 				</div>
 				<div class="banner-item">
 					<a href="#" class="link-banner banner-effect-1">
-						<figure><img src="{{ asset('assets/images/home-1-banner-2.jpg') }}" alt="" width="580"
+						<figure><img src="{{ asset('assets/images/banner-sli-2.png') }}" alt="" width="580"
 								height="190"></figure>
 					</a>
 				</div>
@@ -109,10 +109,10 @@
 
 			<!--Latest Products-->
 			<div class="wrap-show-advance-info-box style-1">
-				<h3 class="title-box">Latest Products</h3>
+				<h3 class="title-box">Latest Gifts</h3>
 				<div class="wrap-top-banner">
 					<a href="#" class="link-banner banner-effect-2">
-						<figure><img src="{{ asset('assets/images/digital-electronic-banner.jpg') }}" width="1170"
+						<figure><img src="{{ asset('assets/images/big-banner-1.png') }}" width="1170"
 								height="240" alt=""></figure>
 					</a>
 				</div>
@@ -162,7 +162,7 @@
 				<h3 class="title-box">Product Categories</h3>
 				<div class="wrap-top-banner">
 					<a href="#" class="link-banner banner-effect-2">
-						<figure><img src="{{ asset('assets/images/fashion-accesories-banner.jpg') }}" width="1170"
+						<figure><img src="{{ asset('assets/images/big-banner-2.png') }}" width="1170"
 								height="240" alt=""></figure>
 					</a>
 				</div>
